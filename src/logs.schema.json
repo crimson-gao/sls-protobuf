@@ -1,0 +1,61 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "LogGroup",
+    "description": "Log group",
+    "type": "object",
+    "properties": {
+        "Logs": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Time": {
+                        "type": "integer",
+                        "required": true
+                    },
+                    "Contents": {
+                        "type": "array",
+                        "required": true,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Key": {
+                                    "type": "string",
+                                    "required": true
+                                },
+                                "Value": {
+                                    "type": "string",
+                                    "required": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Topic": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "LogTags": {
+            "type": "array",
+            "required": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "Value": {
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }
+        }
+    }
+}
